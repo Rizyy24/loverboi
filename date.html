@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Will You Be My Valentine?</title>
+        <link rel="stylesheet" href="src/App.css">
+        <style>
+          body {
+            background-color: #ffe4e1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="App">
+          <div class="container">
+            <h1>Heyy Aashna, thank you for being such a cutie and choosing the right answerss! I love uu soo muchhh and there's something really important I needa ask uu...</h1>
+            <h2>WILL YOU BE MY VALENTINE 🌹?</h2>
+            <div class="buttons">
+              <button id="yesButton" class="yes-button">Yes</button>
+              <button id="noButton" class="no-button">No</button>
+            </div>
+          </div>
+        </div>
+        <script>
+          let fontSize = 14;
+          let yesButtonTextIndex = 0;
+          let noButtonClicked = false;
+          const yesButtonTexts = [
+            "Ayy u sure bat tht ?",
+            "Pleaseee reconsiderr ?",
+            "I love uu 😭",
+            "Pleaseee ???",
+          ];
+
+          const noButton = document.getElementById('noButton');
+          noButton.addEventListener('click', () => {
+            noButtonClicked = true;
+            fontSize += 2;
+            const yesButton = document.getElementById('yesButton');
+            yesButton.style.fontSize = fontSize + 'px';
+
+            yesButton.textContent = yesButtonTexts[yesButtonTextIndex];
+            yesButtonTextIndex = (yesButtonTextIndex + 1) % yesButtonTexts.length;
+          });
+
+          const yesButton = document.getElementById('yesButton');
+          yesButton.addEventListener('click', () => {
+            if (noButtonClicked) {
+              window.location.href = 'yes-after-no.html';
+            } else {
+              window.location.href = 'yes-response.html';
+            }
+          });
+        </script>
+      </body>
+    </html>

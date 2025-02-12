@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nickname</title>
+        <link rel="stylesheet" href="src/App.css">
+        <style>
+          body {
+            background-color: #ffe4e1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="App">
+          <div class="container">
+            <h1>Ahem good choice bbg but you're not done yet!</h1>
+            <p>Type in a nickname:</p>
+            <form id="nicknameForm" onsubmit="checkNickname(event)">
+              <input type="text" id="nickname" placeholder="Nickname" />
+              <p>(something you call him by)</p>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+        <script>
+          function checkNickname(event) {
+            event.preventDefault();
+            const nickname = document.getElementById('nickname').value;
+            const correctNicknames = ['fatty', 'shona', 'Fatty', 'Shona'];
+            if (correctNicknames.includes(nickname)) {
+              window.location.href = 'girlfriend.html';
+            } else {
+              window.location.href = 'not-girlfriend.html';
+            }
+          }
+        </script>
+      </body>
+    </html>

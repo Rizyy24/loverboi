@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>I Love You So Much!</title>
+        <link rel="stylesheet" href="src/App.css">
+        <style>
+          body {
+            background-color: #ffe4e1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+          }
+
+          .surprise-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 8px 16px;
+            background-color: #f06292;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+          }
+
+          .read-button {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            padding: 8px 16px;
+            background-color: #f06292;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+          }
+
+          .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            text-align: center;
+          }
+
+          .popup button {
+            margin-top: 10px;
+          }
+
+          .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="App">
+          <div class="container">
+            <button class="surprise-button" onclick="handleSurpriseClick()">HEYY CUTIE CLICK KARO</button>
+            <h1 class="long-message">Hiii Aashnaa its been over 2 years since ive met , and all i can say its tht its been a greattt journey for our relationship both romantically and as friends we've gone through many phases and we've overcome them situations . im really grateful to have u and i could go on writing books about u if i had to describe how perfect you are for me . the first time i saw u , i felt wholesome and tht feeling has only grown ever since . ITSS OUR FIRST VALENTINES BABY OMG CAN U IMAGINE i mean why imaginee hahah . CUTIEE I LOVE UU SOO MUCHH LIKE FRR ANDD U MEAN THE WORLD TO ME . im very veryyy proud of uuu and im gonna be with uu forever istg i could not have asked for a better person by my side, ur literally perfectt .things might not be in its best shape rn but i believe evrything will fall into place and its all gonna be alright , uk well get through it togtherr . i love uu aashna love uu soo muchh princesss thank u for being my valentine this yearr ( after this marraige only direct ) cutieee muah muahhh !!!!!!!!! ( cutu check top right for a suprise )</h1>
+            <button class="read-button" onclick="setRead()">IVE READD BABYY</button>
+          </div>
+        </div>
+
+        <div id="popup" class="popup" style="display:none;">
+          <h2>Make sure you've read the msg!</h2>
+          <button onclick="hidePopup()">Back</button>
+        </div>
+
+        <div id="overlay" class="overlay" style="display:none;"></div>
+
+        <script>
+          let hasRead = false;
+
+          function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+          }
+
+          function hidePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+          }
+
+          function setRead() {
+            hasRead = true;
+          }
+
+          function handleSurpriseClick() {
+            if (hasRead) {
+              window.location.href = 'surprise.html';
+            } else {
+              showPopup();
+            }
+          }
+        </script>
+      </body>
+    </html>
